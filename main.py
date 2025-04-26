@@ -17,7 +17,9 @@ while True:
         metodos.visualizar_produtos()
     elif r == 5:
         terminal.sobre_o_candidato()
+    elif r == 6:
+        quit()
     else:
         metodos.limpar_terminal()
         print("tente novamente...")
-        time.sleep(10)
+        time.sleep(5)

@@ -41,7 +41,8 @@ def sobre_o_candidato():
         '\n'
         '- Email: kayky.carvalho.cc@gmail.com\n' \
         '- Telefone: (11) 96039-6594\n'
-        '- Whatsapp: https://api.whatsapp.com/send?phone=5511960396594'
+        '- Whatsapp: https://api.whatsapp.com/send?phone=\n' \
+        '\n'
     )
-    time.sleep(5)
+    input("Pressione Enter para voltar ao menu principal.")
     

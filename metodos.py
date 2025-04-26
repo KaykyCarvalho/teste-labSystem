@@ -81,4 +81,5 @@ def visualizar_produtos():
     resultados = database.listar()
     tabela = formatacao.tabela_formata(resultados)
     print(tabela)
-    time.sleep(10)
+    print('')
+    input("Pressione Enter para voltar ao menu principal.")
