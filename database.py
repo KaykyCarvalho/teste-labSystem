@@ -26,7 +26,7 @@ def inserir_fornecedor(nome_fornecedor, email_fornecedor):
     conexao.commit()
     conexao.close()
 
-def inserir(nome_produto, nome_usuario, descricao_produto, quantidade_produto, valor_produto):
+def inserir_produto(nome_produto, nome_usuario, descricao_produto, quantidade_produto, valor_produto):
     conexao = conectar()
     cursor = conexao.cursor()
     comando = f'INSERT INTO cadastro.produto (nome, data_cadastro, nome_usuario, descricao, quantidade, valor) VALUES ("{nome_produto}", "{datetime.datetime.now()}", "{nome_usuario}", "{descricao_produto}", {quantidade_produto}, {valor_produto})'
@@ -34,7 +34,25 @@ def inserir(nome_produto, nome_usuario, descricao_produto, quantidade_produto, v
     conexao.commit()
     conexao.close()
 
-def listar():
+def listar_clientes():
+    conexao = conectar()
+    cursor = conexao.cursor()
+    comando = f'SELECT * FROM cliente'
+    cursor.execute(comando)
+    resultados = cursor.fetchall()
+    conexao.close()
+    return resultados
+
+def listar_fornecedores():
+    conexao = conectar()
+    cursor = conexao.cursor()
+    comando = f'SELECT * FROM fornecedores'
+    cursor.execute(comando)
+    resultados = cursor.fetchall()
+    conexao.close()
+    return resultados
+
+def listar_produtos():
     conexao = conectar()
     cursor = conexao.cursor()
     comando = f'SELECT * FROM produto'

@@ -2,9 +2,11 @@ import os
 import database
 import terminal
 import time
-import formatacao
+import visualizacao_clientes
+import visualizacao_fornecedores
+import visualizacao_produtos
 
-def obter_numero_inteiro(): # Função que verifica se o usuário digitou um número e inteiro
+def obter_numero_inteiro():
     while True:
         try:
             qtd = int(input("| Digite a quantidade desse produto: "))
@@ -14,7 +16,7 @@ def obter_numero_inteiro(): # Função que verifica se o usuário digitou um nú
         except ValueError:
             print("DIGITE UM NÚMERO INTEIRO!")
 
-def obter_numero_real(): # Função que verifica se o usuário digitou um número e inteiro
+def obter_numero_real():
     while True:
         try:
             qtd = float(input("| Digite o valor desse produto: "))
@@ -54,7 +56,7 @@ def cadastrar_fornecedor():
     time.sleep(5)
 
 
-def criar_produto(): # CREATE | Criação de um novo produto, onde é solicitado nome do usuario, nome do produto, descricao do produto, quantidade do produto e valor do produto.
+def cadastrar_produto(): # CREATE | Criação de um novo produto, onde é solicitado nome do usuario, nome do produto, descricao do produto, quantidade do produto e valor do produto.
     limpar_terminal()
     terminal.adicionando_produto()
     nome_produto = input("| Digite o nome do produto : ") 
@@ -71,15 +73,31 @@ def criar_produto(): # CREATE | Criação de um novo produto, onde é solicitado
     limpar_terminal()
     terminal.adicionando_produto()
     nome_usuario = input("Responsavel pela adição do produto: ")
-    database.inserir(nome_produto, nome_usuario, descricao_produto, quantidade_produto, valor_produto)
+    database.inserir_produto(nome_produto, nome_usuario, descricao_produto, quantidade_produto, valor_produto)
     limpar_terminal()
     print(nome_produto, 'adicionado(a) com sucesso.')
     time.sleep(5)
 
+def visualizar_clientes():
+    limpar_terminal()
+    resultados = database.listar_clientes()
+    tabela = visualizacao_clientes.tabela_formata(resultados)
+    print(tabela)
+    print('')
+    input("Pressione Enter para voltar ao menu principal.")
+
+def visualizar_fornecedores():
+    limpar_terminal()
+    resultados = database.listar_fornecedores()
+    tabela = visualizacao_fornecedores.tabela_formata(resultados)
+    print(tabela)
+    print('')
+    input("Pressione Enter para voltar ao menu principal.")
+
 def visualizar_produtos():
     limpar_terminal()
-    resultados = database.listar()
-    tabela = formatacao.tabela_formata(resultados)
+    resultados = database.listar_produtos()
+    tabela = visualizacao_produtos.tabela_formata(resultados)
     print(tabela)
     print('')
     input("Pressione Enter para voltar ao menu principal.")

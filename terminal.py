@@ -1,18 +1,38 @@
-import time
-import os
 import metodos
 
 def menu_inicial():
     metodos.limpar_terminal()
     print('----Menu principal----\n'
     '\n'
+    '[1]Menu de cadastro\n'
+    '[2]Menu de visualização\n'
+    '[3]Sobre o candidato\n'
+    '[4]Sair\n'
+    '\n'
+    )
+
+def menu_cadastro():
+    metodos.limpar_terminal()
+    print(
+    '----Menu de cadastro----\n'
+    '\n'
     '[1]Cadastrar cliente\n'
     '[2]Cadastrar fornecedor\n'
     '[3]Cadastrar produto\n'
-    '[4]Visualizar estoque\n'
-    '[5]Sobre o candidato\n'
-    '[6]Sair\n'
+    '[4]Voltar\n'
     '\n'
+    )
+
+def menu_visualizar():
+    metodos.limpar_terminal()
+    print(
+        '----Menu de visualização----\n'
+        '\n'
+        '[1]Visualizar clientes\n'
+        '[2]Visualizar fornecedores\n'
+        '[3]Visualizar estoque\n'
+        '[4]Voltar\n'
+        '\n'
     )
 
 def adicionando_cliente():
