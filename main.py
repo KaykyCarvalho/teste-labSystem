@@ -1,6 +1,5 @@
 import terminal # mostra as telas no terminal
 import metodos # Busca métodos separados
-import time # Cria timer
 
 while True:
     terminal.menu_inicial()
@@ -34,8 +33,34 @@ while True:
             else:
                 metodos.limpar_terminal()
         elif r == 3:
-            terminal.sobre_o_candidato()
+            terminal.menu_modificacao()
+            r3 = int(input("Escolha uma das opções acima: "))
+            if r3 == 1:
+                metodos.modificar_cliente()
+            elif r3 == 2:
+                metodos.modificar_fornecedor()
+            elif r3 == 3:
+                metodos.modificar_produto()
+            elif r3 == 4:
+                print('')
+            else:
+                metodos.limpar_terminal()
         elif r == 4:
+            terminal.menu_remocao()
+            r4 = int(input("Escolha uma das opções acima: "))
+            if r4 == 1:
+                metodos.remover_cliente()
+            elif r4 == 2:
+                metodos.remover_fornecedor()
+            elif r4 == 3:
+                metodos.remover_produto()
+            elif r4 == 4:
+                print('')
+            else:
+                metodos.limpar_terminal()
+        elif r == 5:
+            terminal.sobre_o_candidato()
+        elif r == 6:
             quit()
         else:
             metodos.limpar_terminal()

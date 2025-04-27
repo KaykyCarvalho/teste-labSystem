@@ -2,25 +2,28 @@ import metodos
 
 def menu_inicial():
     metodos.limpar_terminal()
-    print('----Menu principal----\n'
-    '\n'
-    '[1]Menu de cadastro\n'
-    '[2]Menu de visualização\n'
-    '[3]Sobre o candidato\n'
-    '[4]Sair\n'
-    '\n'
+    print(
+        '----Menu principal----\n'
+        '\n'
+        '[1]Menu de cadastro\n'
+        '[2]Menu de visualização\n'
+        '[3]Menu de modificação\n'
+        '[4]Menu de remoção\n'
+        '[5]Sobre o candidato\n'
+        '[6]Sair\n'
+        '\n'
     )
 
 def menu_cadastro():
     metodos.limpar_terminal()
     print(
-    '----Menu de cadastro----\n'
-    '\n'
-    '[1]Cadastrar cliente\n'
-    '[2]Cadastrar fornecedor\n'
-    '[3]Cadastrar produto\n'
-    '[4]Voltar\n'
-    '\n'
+        '----Menu de cadastro----\n'
+        '\n'
+        '[1]Cadastrar cliente\n'
+        '[2]Cadastrar fornecedor\n'
+        '[3]Cadastrar produto\n'
+        '[4]Voltar\n'
+        '\n'
     )
 
 def menu_visualizar():
@@ -31,6 +34,30 @@ def menu_visualizar():
         '[1]Visualizar clientes\n'
         '[2]Visualizar fornecedores\n'
         '[3]Visualizar estoque\n'
+        '[4]Voltar\n'
+        '\n'
+    )
+
+def menu_modificacao():
+    metodos.limpar_terminal()
+    print(
+        '----Menu de modificação----\n'
+        '\n'
+        '[1]Modificar cliente\n'
+        '[2]Modificar fornecedor\n'
+        '[3]Modificar produto\n'
+        '[4]Voltar\n'
+        '\n'
+    )
+
+def menu_remocao():
+    metodos.limpar_terminal()
+    print(
+        '----Menu de remoção----\n'
+        '\n'
+        '[1]Remover cliente\n'
+        '[2]Remover fornecedor\n'
+        '[3]Remover produto\n'
         '[4]Voltar\n'
         '\n'
     )
